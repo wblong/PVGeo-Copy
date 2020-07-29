@@ -20,14 +20,16 @@ This example demos :class:`PVGeo.filters.ManySlicesAlongPoints`
 ###############################################################################
 # sphinx_gallery_thumbnail_number = 3
 import pyvista
-from pyvista import examples
+import os
 import numpy as np
 import PVGeo
 from PVGeo.filters import ManySlicesAlongPoints
 
 ###############################################################################
 # Load a volumetric model to be sliced from pyvista's examples
-model = examples.load_channels()
+dir_path="./data"
+channelsfile = os.path.join(dir_path, 'channels.vti')
+model = pyvista.read(channelsfile)
 model.plot()
 
 ###############################################################################

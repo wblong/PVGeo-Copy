@@ -21,7 +21,6 @@ cells field.
 """
 # sphinx_gallery_thumbnail_number = 6
 import pyvista
-from pyvista import examples
 from PVGeo.model_build import CreateTensorMesh
 from PVGeo.grids import ExtractTopography
 import os
@@ -44,9 +43,7 @@ mesh.plot(show_grid=True, color=True, show_edges=True)
 
 ###############################################################################
 # Now load the topography file from the example data:
-link = 'https://dl.dropbox.com/s/gw5v3tiq68oge3l/Example-Extract-Topo.zip?dl=0'
-examples.downloads._retrieve_file(link, 'Example-Extract-Topo.zip')
-topo = pyvista.read(os.path.join(pyvista.EXAMPLES_PATH, 'topo.vtk'))
+topo = pyvista.read('./data/topo.vtk')
 
 p = pyvista.Plotter()
 p.add_mesh(topo, cmap='terrain')

@@ -16,13 +16,15 @@ This example demos :class:`PVGeo.filters.NormalizeArray`
 """
 import numpy as np
 import pyvista
-from pyvista import examples
+import os
 import PVGeo
 from PVGeo.filters import NormalizeArray
 
 ###############################################################################
 # Create some input data. this can be any `vtkDataObject`
-mesh = examples.load_uniform()
+dir_path="./data"
+uniformfile = os.path.join(dir_path, 'uniform.vtk')
+mesh = pyvista.UniformGrid(uniformfile)
 title = 'Spatial Point Data'
 mesh.plot(scalars=title)
 ###############################################################################

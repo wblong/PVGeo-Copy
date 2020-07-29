@@ -13,7 +13,7 @@ from PVGeo.grids import TableToTimeGrid
 ###############################################################################
 
 # points_url = 'http://www.trainingimages.org/uploads/3/4/7/0/34703305/sundarbans.zip'
-filename, _ = examples.downloads._download_file('sundarbans.SGEMS.zip')
+filename='./data/sundarbans.SGEMS.zip'
 
 reader = GSLibReader()
 table = reader.apply(filename)

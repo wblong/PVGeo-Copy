@@ -11,10 +11,8 @@ from pyvista import examples
 
 ###############################################################################
 # Download sample data files and keep track of names:
-url = 'https://github.com/OpenGeoVis/PVGeo/raw/master/tests/data/Craig-Chile/craig_chile.msh'
-mesh_file, _ = examples.downloads._retrieve_file(url, 'craig_chile.msh')
-url = 'https://github.com/OpenGeoVis/PVGeo/raw/master/tests/data/Craig-Chile/Lpout.mod'
-model_file, _ = examples.downloads._retrieve_file(url, 'Lpout.mod')
+mesh_file ="./tests/data/Craig-Chile/craig_chile.msh"
+model_file = './tests/data/Craig-Chile/Lpout.mod'
 
 ###############################################################################
 # Read the mesh and model

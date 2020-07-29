@@ -8,12 +8,12 @@ a histogram of that data array.
 This example demos :class:`PVGeo.filters.ExtractArray`
 """
 from PVGeo.filters import ExtractArray
-from pyvista import examples
+import pyvista
 import matplotlib.pyplot as plt
 
 ###############################################################################
 # Create input data
-dataset = examples.download_st_helens()
+dataset = pyvista.read("./data/SainteHelens.dem")
 
 ###############################################################################
 # Construct the filter
@@ -22,6 +22,5 @@ filt = ExtractArray()
 # Apply the filter on the input
 table = filt.apply(dataset, 'Elevation')
 print(table)
-
 ###############################################################################
 plt.hist(table['Elevation'])

@@ -11,8 +11,7 @@ from pyvista import examples
 ###############################################################################
 # Download a sample Surfer grid file
 fname = 'surfer-grid.grd'
-url = 'https://github.com/OpenGeoVis/PVGeo/raw/master/tests/data/{}'.format(fname)
-filename, _ = examples.downloads._retrieve_file(url, fname)
+filename= './tests/data/{}'.format(fname)
 dem = SurferGridReader().apply(filename)
 
 ###############################################################################

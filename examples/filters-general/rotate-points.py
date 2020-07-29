@@ -7,12 +7,15 @@ This example will demonstrate how to rotate points in a `vtkPolyData` object aro
 THis example demos :class:`PVGeo.filters.RotatePoints`
 
 """
-from pyvista import examples
+import pyvista
+import os
 from PVGeo.filters import RotatePoints
 
 ###############################################################################
 # Get :class:`pyvista.PolyData` sample input to rotate
-mesh = examples.load_uniform().cell_centers()
+dir_path="./data"
+uniformfile = os.path.join(dir_path, 'uniform.vtk')
+mesh =pyvista.UniformGrid(uniformfile).cell_centers()
 mesh.plot()
 
 ###############################################################################

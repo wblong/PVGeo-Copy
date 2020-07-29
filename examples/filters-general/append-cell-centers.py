@@ -6,13 +6,16 @@ This example will demonstrate how to append a dataset's cell centers as a length
 
 This example demonstrates :class:`PVGeo.filters.AppendCellCenters`
 """
-
+import pyvista
+import os
 from pyvista import examples
 from PVGeo.filters import AppendCellCenters
 
 ###############################################################################
 # Use an example mesh from pyvista
-mesh = examples.load_rectilinear()
+dir_path="./data"
+rectfile = os.path.join(dir_path, 'rectilinear.vtk')
+mesh = pyvista.RectilinearGrid(rectfile)
 print(mesh)
 
 ###############################################################################

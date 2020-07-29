@@ -11,7 +11,7 @@ This example demos :class:`PVGeo.filters.VoxelizePoints`
 """
 # sphinx_gallery_thumbnail_number = 2
 import pyvista
-from pyvista import examples
+import os
 import numpy as np
 import pandas as pd
 import PVGeo
@@ -19,8 +19,8 @@ from PVGeo.filters import VoxelizePoints
 
 ###############################################################################
 # Download sample data files and keep track of names:
-url = 'https://github.com/OpenGeoVis/PVGeo/raw/master/tests/data/fault_points.csv'
-fault_file, _ = examples.downloads._retrieve_file(url, 'fault_points.csv')
+dir_path="./data"
+fault_file= os.path.join(dir_path, 'fault_points.csv')
 
 ###############################################################################
 # Let's go ahead and load a simple file that has XYZ coordinates and a boolean
